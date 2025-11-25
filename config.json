@@ -1,0 +1,53 @@
+{
+  "spark": {
+    "app_name": "HDFS_Text_to_Oracle_Optimized",
+    "jar_path": "./ojdbc8.jar",
+    "hdfs_uri": "hdfs://10.177.103.199:8022",
+    "adaptive_enabled": true,
+    "shuffle_partitions": 400,
+    "files_max_partition_bytes": "256MB",
+    "arrow_enabled": true,
+    "read_repartitions": 200,
+    "write_partitions": 20
+  },
+  "oracle": {
+    "url": "jdbc:oracle:thin:@//10.177.103.192:1523/fincorepdb1",
+    "user": "fincore",
+    "password": "Password#1234",
+    "driver": "oracle.jdbc.driver.OracleDriver",
+    "batchsize": 110000
+  },
+  "hdfs": {
+    "base_path": "hdfs://10.177.103.199:8022/CBS-FILES",
+    "glif_subpath": "GLIF",
+    "file_pattern": "VARAGA_GLIFONL_*"
+  },
+  "processing": {
+    "days_lookback": 1,
+    "inr_amount_start": 116,
+    "inr_amount_length": 17,
+    "inr_sign_pos": 132,
+    "non_inr_amount_start": 133,
+    "non_inr_amount_length": 17,
+    "non_inr_sign_pos": 149,
+    "id_start": 51,
+    "id_length": 18,
+    "currency_start": 48,
+    "currency_length": 3,
+    "branch_start": 1,
+    "branch_length": 5,
+    "currency_offset": 6,
+    "cgl_start": 9,
+    "cgl_length": 10,
+    "amount_scale_factor": 1000
+  },
+  "tables": {
+    "cgl_master": "cgl_master",
+    "gl_transactions": "GL_TRANSACTIONS",
+    "gl_balance": "GL_BALANCE"
+  },
+  "logging": {
+    "level": "INFO",
+    "log_file": "./logs/pipeline.log"
+  }
+}
