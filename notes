@@ -1,0 +1,28 @@
+
+now think the fiture seniero that df10 has 100million rows  and df_codes has 10k rows with cgls
+
+now the task is to check the cgl is valid or not from the df_codes df
+
+if cgl in df_codes then "cgl"
+
+if the cgl in df_10 doesnt present in the df_codes then 
+case 1:
+if cgl starts with 5 then replace cgl with 5000000000
+case 2:
+replace with 1111111111
+
+now we will get same cgl codes now we have to make the groupby and agg and sum of transactions and amounts-debit and credit
+
+
+
+
+
+now based in the result i have to add the record 
+case 1 :
+if the dr + cr ==0 do nothing
+
+case 2:
+if dr > cr 
+eg-
+100+ -50 then add a record with same data by debit as 0 and credit as -50
+then when we make groupby and sum aggregation the balance become 0

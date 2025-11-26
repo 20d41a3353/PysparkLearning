@@ -8,4 +8,4 @@ WORKDIR /app
 COPY . .
 
 
-CMD ["spark-submit", "first.py"]
+CMD ["spark-submit", "newTask.py"]
